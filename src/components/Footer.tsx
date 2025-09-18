@@ -1,78 +1,114 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const footerLinks = [
+    { name: "الرئيسية", href: "#home" },
+    { name: "الأسئلة الشائعة", href: "#faq" },
+    { name: "الخدمات", href: "#services" },
+    { name: "التواصل", href: "#contact" },
+    { name: "التذييل", href: "#footer" },
+  ];
+
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:ahmed@example.com", label: "Email" },
+    { name: "Be", color: "text-blue-400", href: "#" },
+    { name: "Ig", color: "text-pink-400", href: "#" },
+    { name: "In", color: "text-blue-600", href: "#" },
   ];
 
   return (
-    <footer className="bg-card border-t border-border/50">
+    <footer id="footer" className="bg-card border-t border-border relative">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-3 gap-8 items-center">
-          {/* Brand */}
-          <div className="text-center md:text-right">
-            <h3 className="font-arabic text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
-              أحمد محمد علي
-            </h3>
-            <p className="font-arabic text-muted-foreground">
-              مطور برمجيات متخصص في تطوير الويب
-            </p>
+        {/* Logo and Navigation */}
+        <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+          {/* Logo */}
+          <div className="flex items-center gap-3 mb-6 md:mb-0">
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">م</span>
+            </div>
+            <span className="font-arabic text-xl font-semibold text-foreground">
+              مطور البرمجيات
+            </span>
           </div>
 
-          {/* Quick Links */}
-          <div className="text-center">
-            <h4 className="font-arabic font-semibold text-foreground mb-4">
-              روابط سريعة
-            </h4>
-            <div className="flex flex-col gap-2">
-              <a href="#about" className="font-arabic text-muted-foreground hover:text-primary transition-smooth">
-                من أنا
+          {/* Navigation Links */}
+          <div className="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+            {footerLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="font-arabic text-muted-foreground hover:text-primary transition-smooth"
+              >
+                {link.name}
               </a>
-              <a href="#projects" className="font-arabic text-muted-foreground hover:text-primary transition-smooth">
-                أعمالي
-              </a>
-              <a href="#contact" className="font-arabic text-muted-foreground hover:text-primary transition-smooth">
-                تواصل معي
-              </a>
-            </div>
+            ))}
           </div>
 
           {/* Social Links */}
-          <div className="text-center md:text-left">
-            <h4 className="font-arabic font-semibold text-foreground mb-4">
-              تابعني
-            </h4>
-            <div className="flex justify-center md:justify-start gap-3">
-              {socialLinks.map((link, index) => (
-                <Button
-                  key={index}
-                  variant="ghost"
-                  size="icon"
-                  asChild
-                  className="hover:shadow-glow-primary transition-bounce"
-                >
-                  <a href={link.href} aria-label={link.label}>
-                    <link.icon className="w-5 h-5" />
-                  </a>
-                </Button>
-              ))}
-            </div>
+          <div className="flex items-center gap-3">
+            <span className="font-arabic text-sm text-muted-foreground ml-4">
+              ابقَ على التواصل
+            </span>
+            {socialLinks.map((social) => (
+              <Button
+                key={social.name}
+                variant="ghost"
+                size="sm"
+                asChild
+                className={`${social.color} hover:bg-primary/10 transition-smooth`}
+              >
+                <a href={social.href}>
+                  {social.name}
+                </a>
+              </Button>
+            ))}
+          </div>
+        </div>
+
+        {/* Contact Info */}
+        <div className="grid md:grid-cols-3 gap-6 mb-8 text-center md:text-right">
+          <div className="flex items-center justify-center md:justify-start gap-3">
+            <Mail className="w-5 h-5 text-primary" />
+            <span className="font-arabic text-muted-foreground">
+              moediab20@gmail.com
+            </span>
+          </div>
+          
+          <div className="flex items-center justify-center gap-3">
+            <Phone className="w-5 h-5 text-primary" />
+            <span className="font-arabic text-muted-foreground">
+              +99 9384 00 0439
+            </span>
+          </div>
+          
+          <div className="flex items-center justify-center md:justify-end gap-3">
+            <MapPin className="w-5 h-5 text-primary" />
+            <span className="font-arabic text-muted-foreground">
+              محطتي في حلب
+            </span>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-border/50 text-center">
-          <p className="font-arabic text-muted-foreground flex items-center justify-center gap-2">
-            © {currentYear} أحمد محمد علي. جميع الحقوق محفوظة. 
-            <span className="flex items-center gap-1">
-              صُنع بـ <Heart className="w-4 h-4 text-red-500 fill-current" /> في المملكة العربية السعودية
-            </span>
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border">
+          <p className="font-arabic text-muted-foreground text-sm mb-4 md:mb-0">
+            © {currentYear} مطور البرمجيات. جميع الحقوق محفوظة.
           </p>
+          
+          <Button
+            onClick={scrollToTop}
+            variant="ghost"
+            size="icon"
+            className="bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-smooth"
+          >
+            <ArrowUp className="w-5 h-5" />
+          </Button>
         </div>
       </div>
     </footer>

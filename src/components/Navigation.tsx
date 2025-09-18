@@ -17,9 +17,10 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'الرئيسية', href: '#home' },
-    { name: 'من أنا', href: '#about' },
-    { name: 'أعمالي', href: '#projects' },
-    { name: 'تواصل معي', href: '#contact' },
+    { name: 'الأسئلة الشائعة', href: '#faq' },
+    { name: 'الخدمات', href: '#services' },
+    { name: 'التواصل', href: '#contact' },
+    { name: 'التذييل', href: '#footer' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -45,9 +46,14 @@ const Navigation = () => {
               e.preventDefault();
               scrollToSection('#home');
             }}
-            className="font-arabic text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-bounce"
+            className="flex items-center gap-3 hover:scale-105 transition-bounce"
           >
-            أحمد علي
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold">م</span>
+            </div>
+            <span className="font-arabic text-xl font-bold text-foreground">
+              مطور البرمجيات
+            </span>
           </a>
 
           {/* Desktop Navigation */}
@@ -67,7 +73,7 @@ const Navigation = () => {
               </a>
             ))}
             <Button variant="hero" size="sm" className="font-arabic">
-              تحميل السيرة الذاتية
+              تواصل معنا
             </Button>
           </div>
 
@@ -102,7 +108,7 @@ const Navigation = () => {
             ))}
             <div className="px-4 pt-2">
               <Button variant="hero" size="sm" className="w-full font-arabic">
-                تحميل السيرة الذاتية
+                تواصل معنا
               </Button>
             </div>
           </div>

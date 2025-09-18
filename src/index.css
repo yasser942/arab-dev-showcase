@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,52 +8,54 @@
 
 @layer base {
   :root {
-    /* Modern Dark Theme with Blue Accents */
-    --background: 222 17% 7%;
-    --foreground: 210 40% 98%;
+    /* Dark Theme with Orange Accents - MOE DIAB Style */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 225 15% 10%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 225 15% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 222 17% 7%;
-    --primary-glow: 217 91% 75%;
+    --primary: 14 100% 64%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 14 100% 74%;
 
-    --secondary: 225 15% 15%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 225 15% 12%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 262 83% 58%;
-    --accent-foreground: 210 40% 98%;
-    --accent-glow: 262 83% 73%;
+    --accent: 14 100% 64%;
+    --accent-foreground: 0 0% 98%;
+    --accent-glow: 14 100% 74%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 225 15% 15%;
-    --input: 225 15% 15%;
-    --ring: 217 91% 60%;
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
+    --ring: 14 100% 64%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     /* Custom Design Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%));
-    --gradient-secondary: linear-gradient(135deg, hsl(225 15% 10%), hsl(225 15% 15%));
-    --gradient-hero: linear-gradient(135deg, hsl(222 17% 7%) 0%, hsl(225 15% 10%) 50%, hsl(217 91% 8%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(14 100% 64%), hsl(14 100% 74%));
+    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 4%), hsl(0 0% 7%));
+    --gradient-hero: radial-gradient(ellipse at center, hsl(0 0% 6%) 0%, hsl(0 0% 4%) 70%);
+    --grid-pattern: radial-gradient(circle at 1px 1px, hsl(0 0% 15%) 1px, transparent 0);
     
-    --shadow-primary: 0 10px 40px -10px hsl(217 91% 60% / 0.3);
-    --shadow-accent: 0 10px 40px -10px hsl(262 83% 58% / 0.3);
-    --shadow-elegant: 0 20px 60px -10px hsl(225 15% 5% / 0.5);
+    --shadow-primary: 0 10px 40px -10px hsl(14 100% 64% / 0.4);
+    --shadow-accent: 0 10px 40px -10px hsl(14 100% 64% / 0.4);
+    --shadow-elegant: 0 20px 60px -10px hsl(0 0% 2% / 0.8);
+    --shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.3);
     
-    --glow-primary: 0 0 40px hsl(217 91% 75% / 0.4);
-    --glow-accent: 0 0 40px hsl(262 83% 73% / 0.4);
+    --glow-primary: 0 0 30px hsl(14 100% 74% / 0.3);
+    --glow-accent: 0 0 30px hsl(14 100% 74% / 0.3);
 
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 }
