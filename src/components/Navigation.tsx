@@ -32,15 +32,14 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
-      isScrolled 
-        ? 'bg-background/80 backdrop-blur-md border-b border-border/50 shadow-elegant' 
-        : 'bg-transparent'
-    }`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${isScrolled
+        ? 'bg-background/80 backdrop-blur-md border-b border-border/50 shadow-elegant'
+        : 'bg-background/80 backdrop-blur-md md:bg-transparent'
+      }`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a 
+          <a
             href="#home"
             onClick={(e) => {
               e.preventDefault();
@@ -49,11 +48,10 @@ const Navigation = () => {
             className="flex items-center gap-3 hover:scale-105 transition-bounce"
           >
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold">م</span>
+              <span className="text-white font-bold">ي</span>
             </div>
             <span className="font-arabic text-xl font-bold text-foreground">
-              مطور البرمجيات
-            </span>
+ياسر الحسن            </span>
           </a>
 
           {/* Desktop Navigation */}
@@ -89,9 +87,8 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`md:hidden overflow-hidden transition-smooth ${
-          isOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
-        }`}>
+        <div className={`md:hidden overflow-hidden transition-smooth ${isOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+          }`}>
           <div className="py-4 space-y-2">
             {navItems.map((item) => (
               <a

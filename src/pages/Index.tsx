@@ -9,7 +9,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background font-arabic" dir="rtl">
       <Navigation />
-      <main>
+      <main className="pt-16 md:pt-20">
         <section id="home">
           <Hero />
         </section>

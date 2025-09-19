@@ -12,7 +12,7 @@ const FAQ = () => {
       answer: "أقدم مجموعة من الخدمات تشمل التصميم والهندسة وإدارة المشاريع. أتخصص في تصميم تجربة المستخدم وتطوير الويب وتطوير تطبيقات الجوال وتطوير البرمجيات المخصصة والعلامات التجارية والهوية البصرية والمزيد."
     },
     {
-      number: "02", 
+      number: "02",
       question: "كيف يمكن لمطور البرمجيات مساعدة عملي؟",
       answer: "من خلال تطوير حلول تقنية مخصصة تناسب احتياجات عملك، وتحسين العمليات الرقمية، وإنشاء تطبيقات تفاعلية تعزز من تجربة العملاء وتزيد الكفاءة التشغيلية."
     },
@@ -54,7 +54,7 @@ const FAQ = () => {
                     )}
                   </div>
                 </button>
-                
+
                 {openIndex === index && (
                   <div className="px-6 pb-6 animate-accordion-down">
                     <p className="font-arabic text-muted-foreground leading-relaxed pr-8">
@@ -66,17 +66,13 @@ const FAQ = () => {
             ))}
           </div>
 
-          {/* Developer Image */}
+          {/* Question Mark */}
           <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=700&fit=crop&crop=face"
-                alt="مطور البرمجيات"
-                className="w-full h-[600px] object-cover"
-              />
-              {/* Decorative elements */}
-              <div className="absolute top-10 right-10 w-20 h-20 border-2 border-primary/50 rounded-full animate-float" />
-              <div className="absolute bottom-20 left-10 w-16 h-16 bg-primary/20 rounded-lg rotate-45 animate-float delay-1000" />
+            <div className="relative overflow-hidden rounded-2xl h-[600px] flex items-center justify-center">
+              {/* Main Question Mark */}
+              <div className="text-[30rem] md:text-[34rem] font-bold text-primary select-none animate-pulse hover:scale-110 transition-all duration-[2000ms] ease-in-out cursor-pointer">
+                ؟
+              </div>
             </div>
           </div>
         </div>
