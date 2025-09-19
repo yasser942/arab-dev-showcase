@@ -112,7 +112,7 @@ const Contact = () => {
             <div className="relative">
               <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
                 <img
-                  src="/src/assets/profile.png"
+                  src="/profile.png"
                   alt="ياسر الحسن"
                   className="w-full h-full object-cover"
                 />
